@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R u+rwX,g+X,o+X 
+find /0x01-shell_permissions -type d -exec chmod u+rwx,g+x,o+x 

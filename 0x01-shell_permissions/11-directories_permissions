@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R o+rwX,u+X,go+X
+chmod -R o+rwX,u+X,go+X 0x01-shell_permissions

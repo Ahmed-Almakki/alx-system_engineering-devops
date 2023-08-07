@@ -1,2 +1,2 @@
 #!/bin/bash
-find . | tail -n 10 | sort -Vr
+find . | tail -n 9 | sort -Vr

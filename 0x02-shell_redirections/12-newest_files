@@ -1,2 +1,2 @@
 #!/bin/bash
-find . | sort -V -k1
+find . | tail -n 10 | sort -Vr

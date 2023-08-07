@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -n -1 iacta | awk {print}
+cat iacta | tail -n -1

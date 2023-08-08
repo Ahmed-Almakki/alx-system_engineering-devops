@@ -1,2 +1,2 @@
 #!/bin/bash
-Name="Best"
+echo Name="Best"

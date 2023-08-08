@@ -1,2 +1,2 @@
 #!/bin/bash
-test $(id -u -n) = $(whoami) && echo "hello user"
+test $(id -u -n) != $(whoami) & echo "aaa"

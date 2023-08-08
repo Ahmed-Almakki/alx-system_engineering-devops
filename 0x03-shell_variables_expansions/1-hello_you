@@ -1,2 +1,2 @@
 #!/bin/bash
-id -nu == $(whoami) && echo "aaaa"
+test $(id -u -n) = $(whoami) && echo "hello user"

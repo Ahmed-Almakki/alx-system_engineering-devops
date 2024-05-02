@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
-vari="Best School"
-for i in {1..10}
+
+i=0
+until [ $i -eq 10 ]
 do
-echo "$vari"
+echo "Best School"
+((i++))
 done
-export ${i?}

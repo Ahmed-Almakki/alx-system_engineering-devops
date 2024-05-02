@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# display clock until 12 and min until 59
+
+hr=0
+min=1
+
+while [ $min -lt 60 ]
+do
+case $min in
+1)
+echo "Hour: $hr"
+echo "$min";;
+59)
+echo "$min"
+((hr++))
+echo "Hour: $hr"
+while [ $hr -lt 13 ]
+do
+echo "$hr"
+((hr++))
+done;;
+*)
+echo "$min";;
+esac
+((min++))
+done

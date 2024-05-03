@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# slicing a names
+
+for i in $(ls)
+do
+	v=$(echo "$i" | cut -d"-" -f2)
+	echo "$v"
+done

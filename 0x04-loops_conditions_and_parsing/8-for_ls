@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# slicing a names
+# bash script display part of the name
 
 for i in $(ls)
 do

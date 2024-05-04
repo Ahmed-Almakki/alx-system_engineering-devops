@@ -5,6 +5,6 @@ i=0
 while true
 do
 	echo "To infinity and beyond"
-	let i++
+	((i++))
 	sleep 2
 done

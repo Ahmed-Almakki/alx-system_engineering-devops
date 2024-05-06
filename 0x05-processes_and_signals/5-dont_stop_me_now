@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #  stopped our 4-to_infinity_and_beyond process using ctrl+c in the previous task, there is actually another way to do this.
 
-
-pidof 4-to_infinity_and_beyond | xargs kill -SIGTERM
+pid=$(pgrep -f "$(basename 4-to_infinity_and_beyond)")
+kill -SIGTERM "$pid"

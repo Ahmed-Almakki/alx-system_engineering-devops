@@ -1,0 +1,30 @@
+link: https://imgur.com/undefined
+
+*For every additional element, why you are adding it:
+	the two servers to improve performance and apply redundency, and the load balancer so to don't overload,
+	 one server and now we can distribute the incomming traffics
+
+*What distribution algorithm your load balancer is configured with and how it works:
+	Round Robin, requests are distributed evenly between servers
+
+*Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both:
+	Active-Active, active-active all servers are running simultaneously and handling requests,
+	 while active-passive there is one avtive server while the other in idle mode ready to be used if something happen
+
+*How a database Primary-Replica (Master-Slave) cluster works.
+	A Primary-Replica setup configures one server to act as the Primary server and the other server to act as a Replica of the Primary server
+
+How a database Primary-Replica (Master-Slave) cluster works:
+	database A called the primary (master) and database B called replica (slave)
+	praimary database deals with write operation while replica database deals with read operation
+
+Issue with infrusturcture:
+
+*-SPOF:
+	if the Primary database server is down, the entire site would be unable to make changes to the site.
+
+*-security issues.
+	The data transmitted over the network isn't encrypted using an SSL certificate so hackers can spy on the network.
+
+*-No monitoring.
+	We have no way of knowing the status of each server since they're not being monitored.

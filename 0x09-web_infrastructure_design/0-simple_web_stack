@@ -1,0 +1,32 @@
+link: https://imgur.com/2pjBGB5
+
+1- What is a server:
+	is a computer that serve 
+
+2- What is the role of the domain name:
+	human readable name to access a web site
+
+3- What type of DNS record www is in www.foobar.com:
+	CNAME
+
+4- What is the role of the web server:
+	provide (web page, video, images, etc.) static files
+
+5- What is the role of the application server:
+	allow you to interacte with web site
+
+6- What is the role of the database:
+	store the data for future uses
+
+7- What is the server using to communicate with the computer of the user requesting the website:
+	either HTTP/HTTPS
+
+Issues with this infrastructure:
+
+*- SPOF:
+	becuase you have one server if any thing happen to it you lose everythinh
+
+*- Downtime:
+	also becuase its one server that mean if you try to update users can't access and they have to wait
+*- scalling:
+	can not handle scalling because of the limitted resourcse and here is we have just one server

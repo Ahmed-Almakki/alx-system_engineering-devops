@@ -1,14 +1,25 @@
-# install flask from pip3
-package { 'Flask':
-  ensure   => '2.1.0',
-  provider => 'pip3',
-  require  => Package['python3'],
+# install flask from pip3.
+
+# ensure that python present 
+package { 'python3.8':
+  ensure => present,
 }
 
-package { 'Python':
-  ensure   => '3.8.10',
-} 
-package { 'Werkzeug':
-  ensure => '2.1.1',
-  require  => Package['python3'],
+# ensure that pip present
+package { 'python3-pip':
+  ensure => present,
+}
+
+# Install Flask 
+package { 'flask':
+  ensure   => '2.1.0',
+  provider => 'pip',
+  require  => Package['python3-pip'],
+}
+
+# Install Werkzeug 
+package { 'werkzeug':
+  ensure   => '2.1.1',
+  provider => 'pip',
+  require  => Package['python3-pip'],
 }

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Web servers are the piece of software generating and serving HTML pages
+
+sudo apt-get update -y -qq && \
+	sudo apt-get install nginx -y
+sudo ufw allow 'Nginx HTTP'
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
+
+# Creating new index
+echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html

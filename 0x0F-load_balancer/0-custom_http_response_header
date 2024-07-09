@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+# Configure Nginx so that its HTTP response contains a custom header
+sudo apt-get update -y 
+sudo apt-get install -y nginx
+sudo mkdir /etc/ngnix/html
+touch /etc/nginx/html/index.html
+echo "Hello World" > /etc/nginx/html/index.html
+echo "server {
+	      listen 80 default_server;
+	      listen [::]:80 default_server;
+	      add_header X-Served-By $HOSTNAME;
+	      root /etc/nginx/html;
+	      index index.html index.htm;
+
+	      location / {
+		          try_files $uri $uri/ =404;
+	      }
+}" > /etc/nginx/sites-available/default
+sudo service nginx restart

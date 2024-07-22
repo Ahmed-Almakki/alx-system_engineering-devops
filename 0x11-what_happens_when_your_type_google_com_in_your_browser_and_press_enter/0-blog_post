@@ -1,0 +1,26 @@
+When you enter the URL "https://www.google.com" into your browser and hit enter, several steps unfold:
+
+Search for URL and IP Resolution:
+
+The browser first searches for the IP address associated with "www.google.com". If it's not in the browser cache, it checks the operating system's cache. If not found there, it queries a DNS server to translate the domain name into an IP address.
+
+Connection Initiation:
+
+Before establishing a connection, it's important to understand protocols. A protocol is a set of rules for data formatting and processing. The browser uses TCP/IP (Transmission Control Protocol/Internet Protocol), which facilitates data transfer across the internet. At the application layer of TCP/IP, protocols like HTTP (Hypertext Transfer Protocol) and HTTPS (HTTP Secure) are used. HTTPS encrypts communication using protocols like SSL (Secure Sockets Layer) or TLS (Transport Layer Security).
+
+Load Balancing:
+
+If there are multiple servers for a site, a load balancer distributes user requests among these servers to improve efficiency and handle high traffic.
+
+Firewall Check:
+
+Before accessing the servers, requests may pass through a firewall—a security system that monitors and controls network traffic based on predefined rules.
+Establish Connection:
+
+Once past the firewall, the browser establishes a connection with the server using TCP/IP.
+
+Request and Response:
+
+The browser sends a request to the server, which processes it (possibly accessing application servers, web servers, and databases) and sends back the requested information.
+
+In summary, entering a URL initiates a complex process involving DNS resolution, protocol selection (HTTP or HTTPS), potential load balancing across servers, firewall security checks, and ultimately establishing a TCP/IP connection to retrieve and display requested web content.

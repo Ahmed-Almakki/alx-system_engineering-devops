@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+pass="1234"
+sudo useradd -m -s /bin/bash "$1"
+echo "$1:$pass" | chpasswd
+sudo su "$1" -c "whoami"
+su -

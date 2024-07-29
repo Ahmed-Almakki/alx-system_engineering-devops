@@ -18,8 +18,8 @@ pars = json.loads(usr.text)
 
 name = pars.get('name')
 titles = [i['title'] for i in to_pars if i['completed']]
-total_number = len(to_pars)
-number_done = len(titles)
-print("Employee {} is done with tasks({}/{}):".format(name, number_done, total_number))
+tot = len(to_pars)
+don = len(titles)
+print("Employee {} is done with tasks({}/{}):".format(name, don, tot))
 for t in titles:
     print("     {}".format(t))

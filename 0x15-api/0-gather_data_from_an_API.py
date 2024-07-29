@@ -5,10 +5,10 @@ import json
 import sys
 
 if __name__ == "__main__":
-    employ_id = sys.argv[1]
+    emply_id = sys.argv[1]
 
-    user_resp = f'https://jsonplaceholder.typicode.com/users/{employ_id}'
-    to_do_resp = f'https://jsonplaceholder.typicode.com/users/{employ_id}/todos'
+    user_resp = f'https://jsonplaceholder.typicode.com/users/{emply_id}'
+    to_do_resp = f'https://jsonplaceholder.typicode.com/users/{emply_id}/todos'
 
     usr = get(user_resp)
     todo = get(to_do_resp)

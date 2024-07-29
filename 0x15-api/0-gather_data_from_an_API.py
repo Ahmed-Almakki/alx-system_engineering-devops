@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """returns information about his/her TODO list progress."""
-from requests import get
 import json
+from requests import get
 import sys
 
 if __name__ == "__main__":
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     don = len(titles)
     print("Employee {} is done with tasks({}/{}):".format(name, don, tot))
     for t in titles:
-        print("     {}".format(t))
+        print("\t {}".format(t))

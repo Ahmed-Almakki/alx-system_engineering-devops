@@ -20,7 +20,7 @@ if __name__ == "__main__":
     titles = [i.get('title') for i in to_pars if i.get('completed')]
     tot = len(to_pars)
     don = len(titles)
-    username = pars.get("username")
+    username = pars[0].get("username")
 
     with open("2.csv", "w") as csvfile:
         field = ['usr_id', 'usr_name', 'tsk_compltd_stats', "tsk_titl"]

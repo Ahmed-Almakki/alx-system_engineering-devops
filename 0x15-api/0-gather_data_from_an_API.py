@@ -17,7 +17,7 @@ if __name__ == "__main__":
     pars = json.loads(usr.text)
 
     name = pars.get('name')
-    titles = [i['title'] for i in to_pars if i['completed']]
+    titles = [i.get('title') for i in to_pars if i.get('completed')]
     tot = len(to_pars)
     don = len(titles)
     print("Employee {} is done with tasks({}/{}):".format(name, don, tot))

@@ -1,32 +1,18 @@
 #!/usr/bin/python3
-"""returns information about his/her TODO list progress."""
+"""Exports to-do list information for a given employee ID to CSV format."""
 import csv
-import json
-from requests import get
+import requests
 import sys
 
 if __name__ == "__main__":
-    emply_id = sys.argv[1]
+    user_id = sys.argv[1]
+    url = "https://jsonplaceholder.typicode.com/"
+    user = requests.get(url + "users/{}".format(user_id)).json()
+    username = user.get("username")
+    todos = requests.get(url + "todos", params={"userId": user_id}).json()
 
-    user_resp = f'https://jsonplaceholder.typicode.com/users/{emply_id}'
-    to_do_resp = f'https://jsonplaceholder.typicode.com/users/{emply_id}/todos'
-
-    usr = get(user_resp)
-    todo = get(to_do_resp)
-
-    to_pars = json.loads(todo.text)
-    pars = json.loads(usr.text)
-
-    titles = [i.get('title') for i in to_pars if i.get('completed')]
-    tot = len(to_pars)
-    don = len(titles)
-    username = pars[0].get("username")
-
-    with open("2.csv", "w") as csvfile:
-        field = ['usr_id', 'usr_name', 'tsk_compltd_stats', "tsk_titl"]
-        writ = csv.DictWriter(csvfile, fieldnames=field, quoting=csv.QUOTE_ALL)
-        for i in to_pars:
-            writ.writerow({'usr_id': str(i.get('userId')),
-                           'usr_name': str(username),
-                           'tsk_compltd_stats': str(i.get('completed')),
-                           'tsk_titl': str(i.get('title'))})
+    with open("{}.csv".format(user_id), "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        [writer.writerow(
+            [user_id, username, t.get("completed"), t.get("title")]
+         ) for t in todos]
